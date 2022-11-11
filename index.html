@@ -11,13 +11,26 @@
 <body>
     <h1>Masanori Takayanagi</h1>
     <h2>プレゼンテーション：ペアリング</h2>
-    <div class="inputbox" style="width : 200px; height : 60px; background-color: yellow;">
-        <label>人数：</label><input id="inputtext" type="text" size="10">
+    <div class="inputnumber" style="width : 200px; height : 60px; background-color: yellow;">
+        <label>人数：</label><input id="inputnumber" type="text" size="10">
         <button id="emptychartbutton" type="button" text-Align="center">
             空の表作成&#x1F40A;
         </button>
+        <button id="savebutton" type="button" text-Align="center">
+            保存&#x1F40A;
+        </button>
     </div>
-    <div id="output" class="outputbox" style="width : 300px; height : 300px; background-color: green;">
+    <div class="inputchange" style="width : 300px; height : 60px; background-color: green;">
+        <label>ペア：</label><input id="inputchange1" type="text" size="5"><input id="inputchange2" type="text" size="5">
+        <button id="changebutton" type="button" text-Align="center">
+            選択&#x1F40A;
+        </button>
+        <button id="clearbutton" type="button" text-Align="center">
+            クリア&#x1F40A;
+        </button>
+        <button id="finishbutton" type="button" text-Align="center">
+            完了&#x1F40A;
+        </button>
     </div>
     <script src="script.js"></script>
 </body>
