@@ -1,12 +1,53 @@
 body{
-    background: blue;
+    background: lightblue;
 }
 
 h1{
-    color: white;
+    color: black;
 }
 
 h2{
-    color: white;
+    color: black;
 }
 
+h3{
+    color:black;
+}
+
+.content-table{
+    color:black;
+    border-collapse:collapse;
+    background-color: beige;
+}
+
+.left{
+    float:left;
+}
+
+.clear{
+    clear: both;
+  }
+
+.title{
+    font-size: large;
+}
+
+/* .inputchange{
+    
+} */
+table th {
+    background-color: rgb(188, 204, 235);
+}
+table th, table td {
+    border: solid 1px black;
+    padding: 5px;
+    text-align: center;    
+}
+
+nav {
+    float: right;
+}
+
+.left{
+    float:left;
+}
