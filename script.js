@@ -29,11 +29,11 @@ function makeCorrectChart(){
     return emptychart;
 }
 
-const target = document.getElementById("emptychartbutton");
-target.addEventListener('click', makeCorrectChart);
+const target11 = document.getElementById("emptychartbutton");
+target11.addEventListener('click', makeCorrectChart);
 
-const target2 = document.getElementById("savebutton");
-target2.addEventListener('click', saveInitialChart);
+const target12 = document.getElementById("savebutton");
+target12.addEventListener('click', saveInitialChart);
 
 let result = [];
 let initialchart = [];
@@ -44,38 +44,67 @@ function saveInitialChart(){
   newchart = JSON.parse(JSON.stringify(initialchart));
 }
 
-
-// ココから下、保留
-
-
-const target3 = document.getElementById("changebutton");
-target3.addEventListener('click', changeChartDaily);
+const target21 = document.getElementById("changebutton");
+target21.addEventListener('click', changeChartDaily);
 
 function changeChartDaily(){
   let num1 = document.getElementById("inputchange1").value;
   let num2 = document.getElementById("inputchange2").value;
     newchart[num1][num2] = "o";
     newchart[num2][num1] = "o";
-  // result.push(JSON.parse(JSON.stringify(newchart)));
-  // return result;
 }
 
-const target4 = document.getElementById("clearbutton");
-target4.addEventListener('click', clearTextbox);
+const target22 = document.getElementById("clearbutton");
+target22.addEventListener('click', clearTextbox);
 
 function clearTextbox(){
   document.getElementById("inputchange1").value = "";
   document.getElementById("inputchange2").value = "";
 }
 
-
-const target5 = document.getElementById("finishbutton");
-target5.addEventListener('click', outputChart);
+const target23 = document.getElementById("finishbutton");
+target23.addEventListener('click', outputChart);
 
 function outputChart(){
   console.log(newchart);
   console.log(result);
   result.push(JSON.parse(JSON.stringify(newchart)));
-  // return result;
 }
 
+const target13 = document.getElementById("displaybutton");
+target13.addEventListener('click', displayInitialChart);
+
+function displayInitialChart(){
+const intchart = document.getElementById("initialchart");
+
+initialchart.forEach((player) => {  // 配列の中のオブジェクトの数だけ処理を繰り返す
+  const tr = document.createElement("tr");  
+  intchart.appendChild(tr); // 表の中に８個の「tr」（行）ができる
+  // 1行の中を生成
+  const objArray = Object.entries(player);  // オブジェクトを配列に
+  objArray.forEach((arr) => { // No, name, age, gradeの4回繰り返す
+    const td = document.createElement("td");
+    td.textContent = arr[1];  // arr[1]はvalueの部分
+    tr.appendChild(td);
+  });
+});
+}
+
+const target24 = document.getElementById("displaybutton2");
+target24.addEventListener('click', displayChangeChart);
+
+function displayChangeChart(){
+const cngechart = document.getElementById("changechart");
+
+newchart.forEach((object) => {  // 配列の中のオブジェクトの数だけ処理を繰り返す
+  const tr = document.createElement("tr"); 
+  cngechart.appendChild(tr); // 表の中に８個の「tr」（行）ができる
+  // 1行の中を生成
+  const objArray = Object.entries(object);  // オブジェクトを配列に
+  objArray.forEach((arr) => { // No, name, age, gradeの4回繰り返す
+    const td = document.createElement("td");
+    td.textContent = arr[1];  // arr[1]はvalueの部分
+    tr.appendChild(td);
+  });
+});
+}
